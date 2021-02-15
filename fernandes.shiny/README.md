@@ -5,5 +5,5 @@
 ### Important Links
 
 - https://www.shinyfernandes.com
-- https://www.shiny.fernandes/aau/wnm617/fernandes.shiny
+- https://www.shiny.fernandes.com/aau/wnm617/fernandes.shiny
 
