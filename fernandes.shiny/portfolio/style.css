@@ -1,0 +1,82 @@
+/* CSS RESET */
+
+
+*, *::before, *::after {
+   box-sizing:border-box;
+}
+
+:root{
+	
+}
+
+
+
+body {
+   margin:8vh;
+   font-size:100%;
+   font-family:Helvetica, Arial, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+   font-family:Cambria, Georgia, "Times New Roman", serif;
+   color: var(--color-neutral-theme-primary);
+}
+
+/* Layout Classes */
+.container {
+   max-width:1000px;
+   margin-right: auto;
+   margin-left: auto;
+}
+.hidden { display:none; }
+
+
+
+.display-flex { display:flex; }
+.display-block { display:block; }
+.display-inline-flex { display:inline-flex; }
+.display-inline-block { display:inline-block; }
+
+.flex-stretch { flex: 1 1 auto; }
+.flex-none { flex:none; }
+
+.flex-align-center { align-items:center; }
+.flex-align-right { align-items:right; }
+.flex-justify-center { justify-content:center; }
+
+.flex-wrap{ flex-wrap:wrap; }
+.justify-content-space-between{ justify-content: space-between; }
+
+.flex-end{align-content: flex-end; }
+.space-around{justify-content: space-around;}
+
+
+.view-window {
+   position:relative;
+   overflow:hidden;
+   background-size:cover;
+   background-position:center;
+   background-attachment:fixed;
+   height:70vh;
+}
+
+header{
+   
+}
+
+.logo {
+   height: 60px;
+}
+
+.nav{
+   align-items: center;
+}
+
+.menu{
+   padding: 1em 1em;
+}

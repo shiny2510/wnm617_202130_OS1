@@ -1,0 +1,287 @@
+:root {
+   --color-neutral-light: #f0ecec;
+    --color-neutral-medium: #999;
+    --color-neutral-dark: #191919;
+    --color-neutral-theme-primary :#885d90; /*dark-purple*/
+   --color-neutral-theme-secondary:#caaaca; /*light-purple*/
+   --color-neutral-theme-accent-light:#f5edee; /*off-white*/
+   --color-neutral-theme-accent-medium:#e1b4c5; /*beige*/
+   --color-neutral-theme-accent-dark:#d99cb8; /*pink*/
+
+}
+
+/*fontstyle*/
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+
+body {
+   font-family: "Josefin Sans", sans-serif;
+   font-style: normal; 
+   line-height: 2em; 
+   font-weight: 100;
+   background-color: #f9f9f9;
+}
+
+.position-body{
+  padding: 0 0 0 0;
+}
+
+.stickyhead{
+  background-color: var(--color-neutral-theme-primary);
+  color: white;
+}
+
+.stickyhead p{
+  margin: 0;
+  padding-left: 1em;
+}
+.social-icons img{
+ padding: 0 0.5em;
+}
+
+.social-icons{
+  align-items: center;
+}
+
+/*color theme */
+.square {
+  height: 100px;
+  width: 100px;
+  }
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+   font-family: "Libre Baskerville";
+   font-style: italic; 
+   line-height: 1em; 
+   font-weight: 100;
+}
+
+
+/*list*/
+
+li{
+   font-family: Karla;
+   font-style: normal;  
+   font-weight: 400;
+   font-variant-caps: small-caps;
+}
+
+.main_navbar{
+  background: var(--color-neutral-theme-accent-medium);
+  color:var(--color-neutral-theme-primary);
+  padding: 0.5em;
+  font-family: Karla;
+  font-weight: 400;
+}
+
+.navbar {
+   background: var(--color-neutral-theme-accent-medium);
+   color:var(--color-neutral-theme-primary);
+   padding: 0.5em;
+   font-family: Karla;
+   font-style: normal;  
+   font-weight: 400;
+   font-variant-caps: small-caps;
+}
+
+/*.navbar h1 {
+   font-size:1.5em;
+   font-family:'Libre Baskerville';
+   font-style: italic;  
+   font-weight: 100;
+   margin:0;
+  }*/
+
+
+.textblock {
+  /*  position: absolute;
+    top: 50%;
+    left: 30%;
+    transform: translate(-50%,-50%);
+    color:var(--color-neutral-theme-primary);
+    font-size: 1.5em;*/
+    color: var(--color-neutral-theme-primary);
+    padding: 10em 15em;
+}
+
+.textblock h2{
+  line-height: 2em;
+}
+
+
+/*buttons*/
+
+.btn{
+  font-family: Karla;
+  font-style: normal;  
+  font-weight: 400;
+  font-size: 1em;
+  font-variant-caps: small-caps;
+  transition-duration: 0.4s;
+}
+
+.cta_primary{
+   background-color:var(--color-neutral-theme-primary);
+   color:var(--color-neutral-light); 
+}
+
+.btn.borderbutton{
+   background-color:var(--color-white);
+   border:2px solid var(--color-neutral-theme-primary);
+}
+
+/* Product List Design */
+
+.product-item {
+    margin: 0;
+    background-color:white;
+    box-shadow:1px 1px 4px rgba(0,0,0,0.1);
+    padding:1em;
+    transition:all 0.3s;
+    display: block;
+    height: 100%;
+}
+.product-item figure{
+  margin: 0;
+}
+
+.product-item:hover {
+    box-shadow:1px 1px 10px rgba(0,0,0,0.4);
+}
+
+.product-item a: hover{
+  text-decoration: none;
+}
+.product-image{
+  position: relative;
+  height:0;
+  overflow: hidden;
+  padding-bottom: 80%;
+}
+/*.image-main img{
+  position: relative;
+  height: 0;
+  overflow: hidden;
+}*/
+.image-main img{
+  width:100%;
+   object-fit: cover;
+   height: 100%;
+   top: 0;
+   left: 0;
+}
+
+
+.product-image img {
+   position: absolute;
+   width:100%;
+   object-fit: cover;
+   height: 100%;
+   top: 0;
+   left: 0;
+}
+
+.image-thumbs img{
+  width: 120px;
+  height: 120px;
+  object-fit:cover;
+}
+
+
+.card :first-child,
+.card-section :first-child{
+  margin-top: 0;
+}
+
+.product-price{
+
+}
+
+.product-title {
+   font-family: "Libre Baskerville";
+   font-style: italic;
+}
+
+.product-price {
+    font-size: 0.9em;
+    padding: 0.2em 0.4em;
+}
+.product-title {
+    font-size: 1.2em;
+}
+
+.product-desc{
+  font-size:1em;
+  font-weight: 100;
+}
+
+
+.product-image {
+    position: relative;
+    height: 0;
+    overflow: hidden;
+    padding-bottom: 80%;
+}
+
+/*//footer*/
+.footer{
+  background-color: var(--color-neutral-theme-secondary);
+  margin-top: 2em;
+  color: #fff;
+  margin-bottom: 0px;
+}
+
+.footerbottom{
+  background-color: var(--color-neutral-theme-primary);
+  text-align: center;
+  bottom: 0px;
+  color: white;
+}
+
+.footerbottom p{
+  margin:0;
+}
+.footer_context{
+  padding: 0 1em 0 1em;
+}
+
+.suggestions{
+  color: var(--color-neutral-theme-primary);
+  outline:0;
+  border: none;
+  background-color: transparent;
+  font-family: karla;
+}
+.suggestions:hover{
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+span.badge:not(:empty)::after {
+  content:')';
+}
+span.badge:not(:empty)::before {
+  content:'(';
+}
+
+
+
+
+@media (max-width:600px) {
+  h2 {
+    font-size:1em;
+  }
+
+  .textblock{
+    padding: 15em 2em;
+  }
+}
+
+
