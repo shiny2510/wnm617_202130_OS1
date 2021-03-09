@@ -86,7 +86,22 @@ a:hover{
 	padding-left: 0;
 }
 
-
+/* ACCORDION */
+.accordion dt {
+    background-color: #5497b7;
+    padding: 0.5em calc(1em + 2px);
+    color: white;
+    font-weight:bold;
+}
+.accordion dt~dt {
+   margin-top:1em;
+}
+.accordion dd {
+    padding: 1em;
+    margin-left: 0;
+    border: 2px solid #5497b7;
+    border-top-width:0;
+}
 
 
 
