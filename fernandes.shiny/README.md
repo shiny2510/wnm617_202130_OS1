@@ -4,6 +4,5 @@
 
 ### Important Links
 
-- http://www.shinyfernandes.com
-- http://www.shiny.fernandes.com/aau/wnm617/fernandes.shiny
+- host-site: http://www.shinyfernandes.com
 - flower tracker:http://shinyfernandes.com/aau/wnm617/fernandes.shiny/index.html
