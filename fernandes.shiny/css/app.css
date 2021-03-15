@@ -4,18 +4,29 @@
    box-sizing:border-box;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Philosopher&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Philosopher&display=swap');
+
 :root {
-   --font-sans:Helvetica, Arial, sans-serif;
-   --font-serif:Cambria, Georgia, serif;
+
+   --font-sans:Montserrat, Arial, sans-serif;
+   --font-serif:Philosopher, Georgia, serif;
 
 
-   --color-neutral-light:#ede9e9;
+
+  /* --color-neutral-light:#empty-cells: de9e9;
    --color-neutral-medium:#999191;
    --color-neutral-dark:#343030;
 
    --color-main-light:#e5f1f2;
    --color-main-medium:#4ba0a8;
-   --color-main-dark:#0a4349;
+   --color-main-dark:#0a4349;*/
+
+   --color-primary-darkpink: #B6174B;
+   --color-secondary-green: #B4DC7F;
+   --color-accent1-blushpink: #FFEBEC;
+   --color-accent2-pistagreen: #F3FFC6;
+   --color-accent3-yellow: #FEFFA5;
 
    --color-white:#fff;
    --color-black:#111;
@@ -296,6 +307,7 @@ a:hover {
 
 
 /* ICONS */
+
 .icon svg,
 .icon img {
   width:1em;
@@ -303,7 +315,9 @@ a:hover {
   vertical-align: text-bottom;
 }
 
-
+.icons{
+width:30%;
+}
 
 
 /* FLOATERS */
