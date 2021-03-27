@@ -4,41 +4,75 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Floret - Flower Tracker</title>
+   <!-- //favicon// -->
    <link rel="shortcut icon" type="image/png" href="img/favicon.png"/>
 
    <link rel="stylesheet" href="lib/css/jquery.mobile.structure-1.4.5.min.css">
    <link rel="stylesheet" href="css/app.css">
 
    <script src="lib/js/jquery-2.2.4.min.js"></script>
-
    <script src="js/signin.js"></script>
    <script src="js/app.js"></script>
-
    <script src="lib/js/jquery.mobile-1.4.5.min.js"></script>
+
 </head>
 <body>
 
 
    <section data-role="page" id="signin-page">
       <div data-role="main" class="display-flex flex-vertical">
-         <div class="flex-stretch">
-            <!-- <img class="logo" src="img/logo2.png"> -->
+
+         <div class="display-flex flex-vertical flex-align-center">
+            <div>
+               <img class="bg1" src="img/yellowbg.png">
+            </div>
+            <div>
+               <img class="logo" src="img/logo.png">
+            </div>
          </div>
-         <div class="flex-none">
+
+         <div>
             <form class="form" id="signin-form" data-ajax="false" style="padding:1em">
-               <div class="form-control">
-                  <label for="signin-username" class="form-label">Username</label>
-                  <input class="form-input" type="text" id="signin-username" data-role="none">
+               <div class="welcome">
+               <h1>WELCOME</h1>
+               <p>Please Sign In to continue</p>
                </div>
-               <div class="form-control">
-                  <label for="signin-password" class="form-label">Password</label>
-                  <input class="form-input" type="password" id="signin-password" data-role="none">
+               
+               <div class="form-control form-input">
+                  <div class="icon-input-container">
+               
+                        <div class="icon">
+                           <img src="img/User-icon.png">
+                        </div>
+                  
+                     <input class="input" type="text" id="signin-username" placeholder="Enter your Username" data-role="none">
+                  </div> 
                </div>
-               <div class="form-control">
-                  <input type="submit" class="form-button" value="Sign In" data-role="none">
+
+               <div class="form-control form-input">
+                  <div class="icon-input-container">
+               
+                        <div class="icon">
+                           <img src="img/password-icon.png">
+                        </div>
+                  
+                     <input class="input" type="text" id="signin-password" placeholder="Enter your Password" data-role="none">
+                  </div> 
                </div>
-            </form>
+
+
+               <div class="form-control">
+                  <input type="submit" class="form-button" value="SIGN IN" data-role="none">
+               </div>
+
+               <div class="welcome">
+               <p>Don't have an Account?</p>
+               <h4>SIGN UP</h4>
+               </div>
+
+            </form>  
          </div>
+
       </div>
    </section>
 
@@ -220,17 +254,18 @@
 
 
    <script type="text/template" id="footer-template">
-   <ul>
-      
-      <li>
-         <a href="#list-page">
-         <img src="img/listicon.png" class="icons" alt="">
+   <ul class="title-icons">
+      <li><a href="#list-page">
+         <span class="icon"><img src="img/listwhite-icon.png" alt=""></span>
+         <span class="title">LIST</span>
       </a></li>
-      <li>
-         <a href="#recent-page"><img src="img/mapsicon.png" class="icons" alt="">
+      <li><a href="#recent-page">
+         <span class="icon"><img src="img/mapwhite-icon.png" alt=""></span>
+         <span class="title">MAP</span>
       </a></li>
-      <li>
-         <a href="#user-profile-page"><img src="img/profileicon.png" class="icons" alt="">
+      <li><a href="#user-profile-page">
+         <span class="icon"><img src="img/profilewhite-icon.png" alt=""></span>
+         <span class="title">USER</span>
       </a></li>
    </ul>
    </script>
