@@ -59,7 +59,9 @@ a:hover {
 }
 
 
-
+.logo{
+  height: 15%;
+}
 
 
 /* Layout Classes */
@@ -177,7 +179,7 @@ a:hover {
 .form-input {
     width: 100%;
     display: inline-block;
-    border: 1px solid var(--color-neutral-medium);
+    border-bottom: 1px solid var(--color-primary-darkpink);
     margin: 0;
     padding: 0.5em 1em;
     border-radius: 0.3em;
