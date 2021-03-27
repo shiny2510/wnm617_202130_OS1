@@ -22,11 +22,12 @@
 </head>
 <body>
 
-
+<!-- sign in page -->
    <section data-role="page" id="signin-page">
       <div data-role="main" class="display-flex flex-vertical">
 
          <div class="display-flex flex-vertical flex-align-center">
+
             <div>
                <img class="bg1" src="img/yellowbg.png">
             </div>
@@ -80,82 +81,176 @@
       </div>
    </section>
 
-
+<!-- maps page -->
    <section data-role="page" id="recent-page">
-      <div data-role="main"></div>
+      <div data-role="main">
+         <div class="map-icon-test icon" style="position:absolute;left:60vw;top:35vh;font-size:2em" data-activate="#recent-test-modal">
+            <img src="img/pin-icon.png" alt="">
+         </div>
+
+
+         <div class="modal" id="recent-test-modal">
+            <div class="modal-popup small" data-deactivate="#recent-test-modal">
+               <div class="modal-body">popup</div>
+            </div>
+         </div>
+      </div>
+
+      <div class="floater" style="left:43%;top:80%;">
+         <img src="img/addnew-icon.png">
+      </div>
       <footer data-role="footer" data-template="#footer-template"></footer>
    </section>
 
 
+<!-- list page -->
    <section data-role="page" id="list-page">
       <header data-role="header">
-         <h1>Search</h1>
-         <ul>
-            <li class="flex-stretch"></li>
-            <li><a href="#" class="js-list-add-animal"
-               data-activate="#list-add-modal">&plus;</a></li>
-         </ul>
-      </header>
-      <div data-role="main"><div class="overscroll">
-         <!-- ul>li*10>a[href=#animal-profile-page]>{Animal $} -->
-         <ul>
-            <li><a href="#animal-profile-page">Animal 1</a></li>
-            <li><a href="#animal-profile-page">Animal 2</a></li>
-            <li><a href="#animal-profile-page">Animal 3</a></li>
-            <li><a href="#animal-profile-page">Animal 4</a></li>
-            <li><a href="#animal-profile-page">Animal 5</a></li>
-            <li><a href="#animal-profile-page">Animal 6</a></li>
-            <li><a href="#animal-profile-page">Animal 7</a></li>
-            <li><a href="#animal-profile-page">Animal 8</a></li>
-            <li><a href="#animal-profile-page">Animal 9</a></li>
-            <li><a href="#animal-profile-page">Animal 10</a></li>
-            <li><a href="#animal-profile-page">Animal 1</a></li>
-            <li><a href="#animal-profile-page">Animal 2</a></li>
-            <li><a href="#animal-profile-page">Animal 3</a></li>
-            <li><a href="#animal-profile-page">Animal 4</a></li>
-            <li><a href="#animal-profile-page">Animal 5</a></li>
-            <li><a href="#animal-profile-page">Animal 6</a></li>
-            <li><a href="#animal-profile-page">Animal 7</a></li>
-            <li><a href="#animal-profile-page">Animal 8</a></li>
-            <li><a href="#animal-profile-page">Animal 9</a></li>
-            <li><a href="#animal-profile-page">Animal 10</a></li>
-            <li><a href="#animal-profile-page">Animal 1</a></li>
-            <li><a href="#animal-profile-page">Animal 2</a></li>
-            <li><a href="#animal-profile-page">Animal 3</a></li>
-            <li><a href="#animal-profile-page">Animal 4</a></li>
-            <li><a href="#animal-profile-page">Animal 5</a></li>
-            <li><a href="#animal-profile-page">Animal 6</a></li>
-            <li><a href="#animal-profile-page">Animal 7</a></li>
-            <li><a href="#animal-profile-page">Animal 8</a></li>
-            <li><a href="#animal-profile-page">Animal 9</a></li>
-            <li><a href="#animal-profile-page">Animal 10</a></li>
-            <li><a href="#animal-profile-page">Animal 1</a></li>
-            <li><a href="#animal-profile-page">Animal 2</a></li>
-            <li><a href="#animal-profile-page">Animal 3</a></li>
-            <li><a href="#animal-profile-page">Animal 4</a></li>
-            <li><a href="#animal-profile-page">Animal 5</a></li>
-            <li><a href="#animal-profile-page">Animal 6</a></li>
-            <li><a href="#animal-profile-page">Animal 7</a></li>
-            <li><a href="#animal-profile-page">Animal 8</a></li>
-            <li><a href="#animal-profile-page">Animal 9</a></li>
-            <li><a href="#animal-profile-page">Animal 10</a></li>
-            <li><a href="#animal-profile-page">Animal 1</a></li>
-            <li><a href="#animal-profile-page">Animal 2</a></li>
-            <li><a href="#animal-profile-page">Animal 3</a></li>
-            <li><a href="#animal-profile-page">Animal 4</a></li>
-            <li><a href="#animal-profile-page">Animal 5</a></li>
-            <li><a href="#animal-profile-page">Animal 6</a></li>
-            <li><a href="#animal-profile-page">Animal 7</a></li>
-            <li><a href="#animal-profile-page">Animal 8</a></li>
-            <li><a href="#animal-profile-page">Animal 9</a></li>
-            <li data-template="#animal-link-template"></li>
-            <li data-template="#animal-link-template"></li>
-            <li data-template="#animal-link-template"></li>
-            <li data-template="#animal-link-template"></li>
-         </ul>
-      </div></div>
-      <footer data-role="footer" data-template="#footer-template"></footer>
+         <div class="display-flex flex-space-around">
+            <div class="display-block icon">
+               <img src="img/arrow-icon.png">
+            </div>
+            <div class="display-block">
+               <h1>LIST</h1>
+            </div>
+            <div class="display-block icon"> 
+               <a href="#" class="js-list-add-animal"
+               data-activate="#list-add-modal">
+            <img src="img/plus-icon.png"></a>
+            </div>
+            <!-- <li class="flex-stretch"></li> -->
 
+           <!--  <li><a href="#" class="js-list-add-animal"
+               data-activate="#list-add-modal">&plus;</a></li> -->
+         </div>
+      </header>
+      <div data-role="main" >
+
+         <!-- search bar -->
+         <div class="searchbar align-center">
+            <form action="" method="get" class="display-flex">
+            <div class="form-search-input">
+               <input type="search" name="s" placeholder="Search"
+               value="" >
+            </div>
+            <div class="icon" type="submit" class="icon">
+               <img src="img/searchpink-icon.png" alt="">
+            </div>
+            </form>
+         </div>
+
+
+         <div class="overscroll">
+            <!-- ul>li*10>a[href=#animal-profile-page]>{Animal $} -->
+            <div class="list align-content">
+            <ul style="list-style: none;">
+               
+               <li class="list-card">
+                  <a href="#animal-profile-page" style="display: flex; position: relative;">
+                  <div class="list-item"><img src="img/logo.png"></div>
+                  <div class="list-item-text">
+                              <h3>Flower 1</h3>
+                              <p>Type :</p>
+                              <p>Color :</p>
+                           </div>
+                        </a>
+               </li>
+               <li class="list-card">
+                  <a href="#animal-profile-page" style="display: flex; position: relative;">
+                  <div class="list-item"><img src="img/logo.png"></div>
+                  <div class="list-item-text">
+                              <h3>Flower 2</h3>
+                              <p>Type :</p>
+                              <p>Color :</p>
+                           </div>
+                        </a>
+               </li>
+               <li class="list-card">
+                  <a href="#animal-profile-page" style="display: flex; position: relative;">
+                  <div class="list-item"><img src="img/logo.png"></div>
+                  <div class="list-item-text">
+                              <h3>Flower 3</h3>
+                              <p>Type :</p>
+                              <p>Color :</p>
+                           </div>
+                        </a>
+               </li>
+               <li class="list-card">
+                  <a href="#animal-profile-page" style="display: flex; position: relative;">
+                  <div class="list-item"><img src="img/logo.png"></div>
+                  <div class="list-item-text">
+                              <h3>Flower 4</h3>
+                              <p>Type :</p>
+                              <p>Color :</p>
+                           </div>
+                        </a>
+               </li>
+               <li class="list-card">
+                  <a href="#animal-profile-page" style="display: flex; position: relative;">
+                  <div class="list-item"><img src="img/logo.png"></div>
+                  <div class="list-item-text">
+                              <h3>Flower 5</h3>
+                              <p>Type :</p>
+                              <p>Color :</p>
+                           </div>
+                        </a>
+               </li>
+               <li class="list-card">
+                  <a href="#animal-profile-page" style="display: flex; position: relative;">
+                  <div class="list-item"><img src="img/logo.png"></div>
+                  <div class="list-item-text">
+                              <h3>Flower 6</h3>
+                              <p>Type :</p>
+                              <p>Color :</p>
+                           </div>
+                        </a>
+               </li>
+               <li class="list-card">
+                  <a href="#animal-profile-page" style="display: flex; position: relative;">
+                  <div class="list-item"><img src="img/logo.png"></div>
+                  <div class="list-item-text">
+                              <h3>Flower 7</h3>
+                              <p>Type :</p>
+                              <p>Color :</p>
+                           </div>
+                        </a>
+               </li>
+               <li class="list-card">
+                  <a href="#animal-profile-page" style="display: flex; position: relative;">
+                  <div class="list-item"><img src="img/logo.png"></div>
+                  <div class="list-item-text">
+                              <h3>Flower 8</h3>
+                              <p>Type :</p>
+                              <p>Color :</p>
+                           </div>
+                        </a>
+               </li>
+               <li class="list-card">
+                  <a href="#animal-profile-page" style="display: flex; position: relative;">
+                  <div class="list-item"><img src="img/logo.png"></div>
+                  <div class="list-item-text">
+                              <h3>Flower 9</h3>
+                              <p>Type :</p>
+                              <p>Color :</p>
+                           </div>
+                        </a>
+               </li>
+               <li class="list-card">
+                  <a href="#animal-profile-page" style="display: flex; position: relative;">
+                  <div class="list-item"><img src="img/logo.png"></div>
+                  <div class="list-item-text">
+                              <h3>Flower 10</h3>
+                              <p>Type :</p>
+                              <p>Color :</p>
+                           </div>
+                        </a>
+               </li> 
+            </ul>
+            </div>
+         </div>
+      </div>
+
+      <footer data-role="footer" data-template="#footer-template"></footer>
 
 
 
