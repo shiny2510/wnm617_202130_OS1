@@ -96,7 +96,7 @@
          </div>
       </div>
 
-      <div class="floater" style="left:43%;top:80%;">
+      <div class="floater floatericon" style="left:43%;top:80%;">
          <img src="img/addnew-icon.png">
       </div>
       <footer data-role="footer" data-template="#footer-template"></footer>
@@ -107,37 +107,31 @@
    <section data-role="page" id="list-page">
       <header data-role="header">
          <div class="display-flex flex-space-around">
-            <div class="display-block icon">
-               <img src="img/arrow-icon.png">
-            </div>
-            <div class="display-block">
+            <div>
                <h1>LIST</h1>
             </div>
-            <div class="display-block icon"> 
-               <a href="#" class="js-list-add-animal"
-               data-activate="#list-add-modal">
-            <img src="img/plus-icon.png"></a>
+            <div class="icon floater right">
+               <a href="#add-new-page">
+                     <img src="img/plus-icon.png">
+                  </a>
             </div>
-            <!-- <li class="flex-stretch"></li> -->
-
-           <!--  <li><a href="#" class="js-list-add-animal"
-               data-activate="#list-add-modal">&plus;</a></li> -->
          </div>
       </header>
       <div data-role="main" >
 
          <!-- search bar -->
-         <div class="searchbar align-center">
-            <form action="" method="get" class="display-flex">
-            <div class="form-search-input">
-               <input type="search" name="s" placeholder="Search"
-               value="" >
+         <form>
+            <div class="form-control">
+               <div class="hotdog display-flex flex-space-around">
+                  <div>
+                     <input type="text" name="">
+                  </div>
+                  <div class="icon">
+                     <img src="img/searchpink-icon.png">
+                  </div>
+               </div>
             </div>
-            <div class="icon" type="submit" class="icon">
-               <img src="img/searchpink-icon.png" alt="">
-            </div>
-            </form>
-         </div>
+        </form>
 
 
          <div class="overscroll">
@@ -253,7 +247,7 @@
       <footer data-role="footer" data-template="#footer-template"></footer>
 
 
-
+      <!-- Modal popup for add new -->
       <div class="modal" id="list-add-modal">
          <div class="modal-back" data-deactivate="#list-add-modal"></div>
          <form class="modal-popup" data-ajax="false" id="list-add-form">
@@ -281,15 +275,6 @@
          </form>
       </div>
    </section>
-
-
-
-
-
-
-
-
-
 
    <!-- USER DATA SECTION -->
 
@@ -323,32 +308,142 @@
 
 
 
-
-
-
-
-
-
-
-
    <!--  ANIMAL DATA SECTION -->
 
    <section data-role="page" id="animal-profile-page">
       <header data-role="header">
-         <h1>Search</h1>
-         <ul>
-            <li><a href="#" data-rel="back">Back</a></li>
-         </ul>
+         <div class="display-flex flex-space-around"> 
+            <div class="icon floater left">
+               <a href="#list-page" class="js-list-add-animal"
+                  data-activate="#add-new-page">
+                     <img src="img/arrow-icon.png">
+                  </a>
+            </div>
+            <div>
+               <h1>DETAILS</h1>
+            </div>
+            
+         </div>
       </header>
-      <div data-role="main">
-         Animal Profile
+
+      <div data-role="main" class="display-flex flex-vertical">
+         <div class="animal-top">
+
+            <div class="floater">
+               <img src="img/sakura.jpg">
+            </div>
+         </div>
+         
+         <div class="animal-bottom">
+            <div class="overscroll">
+               <div style="margin: 2em ">
+                   <h1>Flower Name</h1><br>
+
+                   <h4> Type</h4><br>
+                   <h4> Color </h4><br>
+                   <h4> Location </h4><br>
+
+                   <h4> Description </h4>
+                   <p>
+                      Lorem ipsum dolor, sit amet consectetur, adipisicing elit. Repudiandae, voluptates, nesciunt. Suscipit cum, quaerat saepe totam praesentium nobis tempore veniam facilis laboriosam debitis a repellendus quae aspernatur dignissimos libero unde!
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora nulla vero doloremque laboriosam alias esse natus accusamus omnis harum nihil eaque molestias nesciunt, impedit error laborum iusto similique, deserunt, dicta.
+                   </p>
+               </div>
+            </div>
+         </div>
       </div>
    </section>
 
 
 
+<!-- add-new-page -->
 
+<section data-role="page" id="add-new-page">
+      <!-- <header data-role="header" style="height: 40vh; border-bottom-left-radius: 30px; border-bottom-right-radius: 30px;">
+         <h1>Flower Detail</h1>
+         <ul>
+            <li>
+               <a href="#" data-rel="back">
+                  <img src="img/back.png" alt="">
+               </a>
+            </li>
+            <li class="flex-stretch"></li>
+         </ul>
+      </header> -->
+      <header data-role="header">
+         <div class="display-flex flex-space-around"> 
+            <div class="icon floater left">
+               <a href="#list-page" class="js-list-add-animal"
+                  data-activate="#add-new-page">
+                     <img src="img/arrow-icon.png">
+                  </a>
+            </div>
+            <div>
+               <h1>ADD NEW</h1>
+            </div>
+            
+         </div>
+      </header>
 
+      <div data-role="main">
+         <div class="animal-top display-flex flex-align-center">
+            <div class="display-flex flex-vertical flex-align-center">
+               <img src="http://via.placeholder.com/200C/O https://placeholder.com/ ">
+            </div>
+         </div>
+         
+         <div class="animal-bottom">   
+         <div class="overscroll">
+            <form class="form" id="profile-form" data-ajax="false">
+
+               <div class="form-control form-input">
+                  <label for="model" class="form-label">Flower Name</label>
+                  <div class="icon-input-container">
+                     <input class="input" type="text" id="name" placeholder="Enter flower name" data-role="none">
+                  </div> 
+               </div>
+            
+               <div class="form-control form-input">
+                  <label for="model" class="form-label">Flower Type</label>
+                  <div class="icon-input-container">
+                     <select class="input" type="text" id="type" placeholder="Select"data-role="none">
+                     <option value="1">Roses</option>
+                     <option value="2">Tulips</option>
+                     <option value="3">Lilies</option>
+                     <option value="3">Orchids</option>
+                     <option value="4">Other</option>
+                     </select>
+                  </div>
+               </div>
+
+               <div class="form-control form-input">
+                  <label for="model" class="form-label">Color</label>
+                  <div class="icon-input-container">
+                     <input class="input" type="text" id="color" placeholder="Enter color" data-role="none">
+                  </div> 
+               </div>
+
+               <div class="form-control form-input">
+                  <label for="model" class="form-label">Location</label>
+                  <div class="icon-input-container">
+                     <input class="input" type="text" id="location" placeholder="Enter Location" data-role="none">
+                  </div> 
+               </div>
+
+               <!-- <div class="form-control" style="overflow: hidden; margin: 1.5em 0;">
+                  <a href="#vehicle-profile-page" class="form-button signin-button" style="float: none; margin: 0 auto;">Save</a>
+
+                  <p>
+                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem nesciunt laboriosam molestias quia, id quos eaque dicta possimus libero dignissimos, fuga sunt. Incidunt quo, sequi beatae magni debitis labore quas.
+                     Lorem ipsum, dolor sit amet, consectetur adipisicing elit. Accusantium nesciunt saepe porro, ab dicta, accusamus quos ut! Ipsam veritatis quibusdam tenetur, illum, voluptatum harum minus atque, qui accusamus ullam error.
+                  </p>
+               </div> -->
+            </form>
+         </div>
+         </div> 
+
+      </div> <!-- --main  -->
+</section>
 
 
 

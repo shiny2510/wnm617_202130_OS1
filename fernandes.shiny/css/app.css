@@ -48,6 +48,7 @@ h5,
 h6 {
    font-family:var(--font-serif);
    color: var(--color-primary-darkpink);
+   margin:0;
 }
 
 a {
@@ -81,16 +82,18 @@ a:hover {
 .flex-vertical { flex-direction:column; }
 .flex-space-around { justify-content: space-around; }
 
-.align-center {align-content: center;}
-
+.align-center { align-content: center;}
+.align-self-center{ align-self: center;}
 
 .overscroll {
+  background-color: var(--color-white);
   overflow:auto;
   height:100%;
   width:100%;
 }
 
-
+.no-touch { pointer-events:none; }
+.do-touch { pointer-events:all; }
 
 
 /* PAGE ELEMENTS */
@@ -224,8 +227,9 @@ a:hover {
 }
 .ui-mobile .form-label {
     margin: 1em 0;
-    font-size: 0.7em;
-    color: var(--color-neutral-medium);
+    font-size: 1em;
+    color: var(--color-primary-darkpink);
+    font-family: var(--font-serif);
 }
 
 .form-input{
@@ -240,6 +244,7 @@ a:hover {
     outline: 0;
     font:inherit;
 }
+
 
 /*.icon-input {
   width: 100%;
@@ -287,7 +292,24 @@ a:hover {
     font-size: large;
 }
 
+.hotdog{
+    display: inline-flex;
+    width: 100%;
+    /* line-height: 3rem; */
+    font: inherit;
+    background-color: var(--color-accent1-blushpink);
+    padding: 0.5em 1.5em;
+    border-radius: 2em;
+    border-width: 0;
+    outline: 0
+  }
 
+.hotdog input{
+    background-color: transparent;
+    border: none;
+    flex: 1 1 100%;
+    font: inherit;
+}
 
 
 /* MODAL */
@@ -399,7 +421,7 @@ a:hover {
 
 .icon img{
   max-width: 1.5em;
-  max-height: 1em;
+  max-height: 1.5em;
 
 }
 
@@ -444,10 +466,12 @@ a:hover {
 }
 
 .floater img{
-  max-width: 3em;
+  max-width: 100%;
 }
 
-
+.floatericon img{
+  max-width: 3em;
+}
 
 
 /* remove this later */
@@ -456,3 +480,17 @@ a:hover {
   background-position:center;
   background-size:cover;
 }
+/* animal profile page */
+.animal-top {
+  flex: none;
+  height:40vh;
+}
+.animal-bottom {
+  flex:1 1 100%;
+  position:relative;
+  overflow:hidden;
+}
+
+
+
+
