@@ -72,7 +72,7 @@
 
                <div class="welcome">
                <p>Don't have an Account?</p>
-               <h4>SIGN UP</h4>
+               <a href="#signup-page"><h4>SIGN UP</h4></a>
                </div>
 
             </form>  
@@ -80,6 +80,82 @@
 
       </div>
    </section>
+
+<!-- sign up page -->
+   <section data-role="page" id="signup-page">
+      <div data-role="main" class="display-flex flex-vertical">
+
+         <div class="display-flex flex-vertical flex-align-center">
+            <div>
+               <img class="bg1" src="img/yellowbg.png">
+            </div>
+         </div>
+
+         <div>
+            <form class="form" id="signin-form" data-ajax="false" style="padding:1em">
+               <div class="welcome">
+               <h1>CREATE ACCOUNT</h1>
+               <p>Please Fill In your details</p>
+               </div>
+               
+               <div class="form-control form-input">
+                  <div class="icon-input-container">
+               
+                        <div class="icon">
+                           <img src="img/User-icon.png">
+                        </div>
+                  
+                     <input class="input" type="text" id="signin-username" placeholder="Enter your Fullname" data-role="none">
+                  </div> 
+               </div>
+
+               <div class="form-control form-input">
+                  <div class="icon-input-container">
+               
+                        <div class="icon">
+                           <img src="img/mail-icon.png">
+                        </div>
+                  
+                     <input class="input" type="text" id="signin-password" placeholder="Enter your email-id" data-role="none">
+                  </div> 
+               </div>
+
+               <div class="form-control form-input">
+                  <div class="icon-input-container">
+               
+                        <div class="icon">
+                           <img src="img/User-icon.png">
+                        </div>
+                  
+                     <input class="input" type="text" id="signin-password" placeholder="Chose your Username" data-role="none">
+                  </div> 
+               </div>
+
+               <div class="form-control form-input">
+                  <div class="icon-input-container">
+               
+                        <div class="icon">
+                           <img src="img/password-icon.png">
+                        </div>
+                  
+                     <input class="input" type="text" id="signin-password" placeholder="Set your Password" data-role="none">
+                  </div> 
+               </div>
+
+               <div class="form-control">
+                  <input type="submit" class="form-button" value="SIGN UP" data-role="none">
+               </div>
+
+               <div class="welcome">
+               <p>Already have an Account?</p>
+               <a href="#signin-page"><h4>SIGN IN</h4></a>
+               </div>
+
+            </form>  
+         </div>
+
+      </div>
+   </section> 
 
 <!-- maps page -->
    <section data-role="page" id="recent-page">
@@ -91,14 +167,27 @@
 
          <div class="modal" id="recent-test-modal">
             <div class="modal-popup small" data-deactivate="#recent-test-modal">
-               <div class="modal-body">popup</div>
+               <div class="modal-body">
+                  <div class="popup-card">
+                     <a href="#animal-profile-page" class="display-flex flex-space-around">
+                        <div class="popup-item">
+                           <img src="img/sakura.jpg">
+                        </div>
+                        <div class="popup-text">
+                        <h2>Flower 6</h2>
+                        </div>
+                     </a>
+               </div>
+
+               </div>
             </div>
          </div>
       </div>
 
       <div class="floater floatericon" style="left:43%;top:80%;">
-         <img src="img/addnew-icon.png">
+         <a href="#add-new-page"><img src="img/addnew-icon.png"></a>
       </div>
+
       <footer data-role="footer" data-template="#footer-template"></footer>
    </section>
 
@@ -279,32 +368,115 @@
    <!-- USER DATA SECTION -->
 
    <section data-role="page" id="user-profile-page">
-      <div data-role="main">
-         Profile
-         <p>
-            <a href="#" class="js-logout">Sign Out</a>
-         </p>
 
-         <div class="floater top right">
-            <a href="#" class="icon" data-activate="#user-settings-modal"><img src="img/profileicon.png" alt=""></a>
+      <header data-role="header">
+         <div class="display-flex flex-space-around">
+            <div>
+               <h1>USER PROFILE</h1>
+            </div>
+            <div class="floater top right">
+               <a href="#" class="icon" data-activate="#user-settings-modal"><img src="img/settings-icon.png" alt=""></a>
+            </div>
+         </div>
+      </header>
+
+
+   <div data-role="main">
+         <div> <!-- body -->
+         
+         <!-- image -->
+         <div class="display-flex flex-vertical">
+            <br>
+            <div class="display-flex flex-vertical flex-align-center">
+               <img src="http://via.placeholder.com/200C/O https://placeholder.com/ ">
+            </div>
          </div>
 
+         <!-- profile details -->
+      <div class="display-flex flex-vertical flex-align-center" style="margin:1em">
+
+         <div style="padding: 1em">
+            <h1>Jane Smith</h1>
+         </div>
+               
+               <br>
+         
+         <div class="icon-input-container hotdog">  
+            <div class="icon" style="padding: 0.5em">
+            <img src="img/User-icon.png">
+            </div>
+
+            <div style="padding: 0.5em">
+            <h3>Jane_05</h3>
+            </div>
+         </div> 
+
+               <br>
+
+         <div class="icon-input-container hotdog">
+               
+              <div class="icon" style="padding: 0.5em">
+               <img src="img/mail-icon.png">
+               </div>
+
+               <div style="padding: 0.5em"><h3>Jane_05@gmail.com</h3>
+               </div>
+         </div> 
+
+
+         <div class="rounded-card">
+            <a href="#list-page">
+               <div class="display-flex flex-vertical flex-align-center" style="padding: 1em 5em">
+                  <div><h2>SCORE</h2></div>
+                        
+                  <div>----------</div>
+
+                  <div><h3>10</h3></div>
+               </div>
+            </a>
+         </div> 
+
+      </div>  <!-- profile details end  -->
+   </div>   <!-- body ends -->
 
          <div class="modal" id="user-settings-modal">
             <div class="modal-drawer right">
                <div class="modal-head display-flex">
-                  <div class="flex-none">Head</div>
+                  <div class="flex-none"><h4>Settings</h4></div>
                   <div class="flex-stretch"></div>
-                  <div class="flex-none"><a href="#"data-deactivate="#user-settings-modal">&times;</a></div>
+                  <div class="flex-none icon"><a href="#"data-deactivate="#user-settings-modal"><img src="img/cross-icon.png" alt=""></a></div>
                </div>
-               <div class="modal-body"><div class="overscroll">
-               </div>
-               </div>
-            </div>
-         </div>
-      </div>
+               <div class="modal-body">
+                  <div class="overscroll">
+                     
+                     <div class="display-flex" style="padding: 1em">
+                        <div class="icon">
+                           <img src="img/edit-icon.png">
+                        </div>
+                        <div style="padding-left: 1em;">
+                        <a href="#" class="js-logout">Edit Profile</a>
+                        </div>
+                     </div> 
+
+                     <div class="display-flex" style="padding: 1em">
+                        <div class="icon">
+                           <img src="img/logout-icon.png">
+                        </div>
+                        <div style="padding-left: 1em;">
+                           <a href="#" class="js-logout">Sign Out</a>
+                        </div>
+                     </div> 
+
+                  </div> <!-- overscroll ends -->
+               </div>   <!-- modal body ends -->
+            </div>   <!-- modal head ends -->
+         </div>      <!-- modal drawer ends -->
+      </div> <!-- modal ends -->
+   </div> 
+      
       <footer data-role="footer" data-template="#footer-template"></footer>
-   </section>
+
+</section>
 
 
 
@@ -386,12 +558,17 @@
       </header>
 
       <div data-role="main">
-         <div class="animal-top display-flex flex-align-center">
-            <div class="display-flex flex-vertical flex-align-center">
+         <div class="animal-top">
+            <div class="display-flex flex-vertical">
                <img src="http://via.placeholder.com/200C/O https://placeholder.com/ ">
-            </div>
+
+               <div class="floater floatericon" style="left:43%;top:17%; z-index: +2;">
+               <a href="#camera_app"><img src="img/camera-icon.png"></a>
+               </div>
+
+            </div>      
          </div>
-         
+            
          <div class="animal-bottom">   
          <div class="overscroll">
             <form class="form" id="profile-form" data-ajax="false">
@@ -399,7 +576,7 @@
                <div class="form-control form-input">
                   <label for="model" class="form-label">Flower Name</label>
                   <div class="icon-input-container">
-                     <input class="input" type="text" id="name" placeholder="Enter flower name" data-role="none">
+                     <input class="input" type="text" id="name" placeholder="What is it called?" data-role="none">
                   </div> 
                </div>
             
@@ -419,25 +596,28 @@
                <div class="form-control form-input">
                   <label for="model" class="form-label">Color</label>
                   <div class="icon-input-container">
-                     <input class="input" type="text" id="color" placeholder="Enter color" data-role="none">
+                     <input class="input" type="text" id="color" placeholder="What color is it?" data-role="none">
                   </div> 
                </div>
 
                <div class="form-control form-input">
                   <label for="model" class="form-label">Location</label>
                   <div class="icon-input-container">
-                     <input class="input" type="text" id="location" placeholder="Enter Location" data-role="none">
+                     <input class="input" type="text" id="location" placeholder="Where did you find it" data-role="none">
                   </div> 
                </div>
 
-               <!-- <div class="form-control" style="overflow: hidden; margin: 1.5em 0;">
-                  <a href="#vehicle-profile-page" class="form-button signin-button" style="float: none; margin: 0 auto;">Save</a>
+               <div class="form-control form-input">
+                  <label for="model" class="form-label">Description</label>
+                  <div class="icon-input-container">
+                     <input class="input" type="text" id="description" placeholder="Say something about it" data-role="none">
+                  </div> 
+               </div>
 
-                  <p>
-                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem nesciunt laboriosam molestias quia, id quos eaque dicta possimus libero dignissimos, fuga sunt. Incidunt quo, sequi beatae magni debitis labore quas.
-                     Lorem ipsum, dolor sit amet, consectetur adipisicing elit. Accusantium nesciunt saepe porro, ab dicta, accusamus quos ut! Ipsam veritatis quibusdam tenetur, illum, voluptatum harum minus atque, qui accusamus ullam error.
-                  </p>
-               </div> -->
+               <div class="form-control">
+                  <a href="#animal-profile-page"><button type="submit" class="form-button" value="SAVE" data-role="none">SAVE</button></a>
+               </div>
+
             </form>
          </div>
          </div> 

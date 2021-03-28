@@ -118,7 +118,7 @@ a:hover {
     height: var(--footer-height);
     line-height: var(--footer-height);
     border-width: 0;
-    background-color: var(--color-secondary-green);
+    background-color: var(--color-primary-darkpink);
     box-shadow: 0 0 5px rgb(0 0 0 / 20%);
     position: relative;
     overflow: hidden;
@@ -193,6 +193,26 @@ a:hover {
    margin-bottom:1em;
    position:relative;
    overflow:hidden;
+}
+
+.rounded-card {
+   background-color:var(--color-accent2-pistagreen);
+   padding:1em;
+   margin-top:1em;
+   margin-bottom:1em;
+   position:relative;
+   overflow:hidden;
+   border-radius: 1em;
+}
+
+.popup-card {
+   background-color:var(--color-accent2-pistagreen);
+   padding:1em;
+   margin-top:1em;
+   margin-bottom:1em;
+   position:relative;
+   overflow:hidden;
+   border-radius: 1em;
 }
 
 .list ul{
@@ -294,7 +314,7 @@ a:hover {
 
 .hotdog{
     display: inline-flex;
-    width: 100%;
+    width: 80%;
     /* line-height: 3rem; */
     font: inherit;
     background-color: var(--color-accent1-blushpink);
@@ -356,7 +376,9 @@ a:hover {
   pointer-events:initial;
 }
 
-
+.popup-item img{
+  max-height: 2.5em;
+}
 
 
 .modal-drawer {
