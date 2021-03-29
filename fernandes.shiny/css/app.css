@@ -134,7 +134,7 @@ a:hover {
     box-shadow: 0 0 5px rgb(0 0 0 / 20%);
     position: relative;
     overflow: hidden;
-    border-radius: 0 0 1em 1em;
+    border-radius: 0 0 3em 3em;
 }
 
 
@@ -183,10 +183,10 @@ a:hover {
 }
 
 
-/*lists*/
+/lists/
 
 
-  .list-card {
+.list-card {
    background-color:var(--color-accent2-pistagreen);
    padding:1em;
    margin-top:1em;
@@ -313,8 +313,8 @@ a:hover {
 }
 
 .hotdog{
-    display: inline-flex;
-    width: 80%;
+    /* display: inline-flex;
+    width: 80%; */
     /* line-height: 3rem; */
     font: inherit;
     background-color: var(--color-accent1-blushpink);
@@ -327,8 +327,10 @@ a:hover {
 .hotdog input{
     background-color: transparent;
     border: none;
+    color: white;
     flex: 1 1 100%;
     font: inherit;
+    :placeholder: {color: white;}
 }
 
 
@@ -413,7 +415,7 @@ a:hover {
 
 .modal-head,
 .modal-foot {
-  background-color:var(--color-neutral-light);
+  background-color:white;
   padding:0.5em 1em;
 }
 .modal-body {
@@ -458,7 +460,6 @@ a:hover {
   display:block;
   vertical-align: middle;
   color: white;
-  padding-top: 3px;
 }
 .title-icons .icon {
   line-height:calc(var(--footer-height)*(2/3));
@@ -474,7 +475,7 @@ a:hover {
 
 
 /* FLOATERS */
-.floater { 
+.floater {
   position:absolute;
  }
 .floater.right { right: 0; }
@@ -483,8 +484,8 @@ a:hover {
 .floater.bottom { bottom: 0; }
 
 .floater .icon {
-  padding:1em;
-  display:block;
+  /* padding:1em;
+  display:block; */
 }
 
 .floater img{
@@ -507,12 +508,9 @@ a:hover {
   flex: none;
   height:40vh;
 }
+.addnew {  flex: none; height:30vh; padding: 35px;}
 .animal-bottom {
   flex:1 1 100%;
   position:relative;
   overflow:hidden;
 }
-
-
-
-
