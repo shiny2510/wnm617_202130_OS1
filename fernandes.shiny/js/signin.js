@@ -7,6 +7,7 @@ const checkSigninForm = async () => {
       // warn that not all information is there
       return;
    }
+   console.log(user.result,"hello");
 
    let user = await query({
       type:'check_signin',

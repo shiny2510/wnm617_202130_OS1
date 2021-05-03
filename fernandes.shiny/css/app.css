@@ -503,14 +503,124 @@ a:hover {
   background-position:center;
   background-size:cover;
 }
-/* animal profile page */
+
+/* ANIMAL PROFILE PAGE */
 .animal-top {
-  flex: none;
+  flex:none;
   height:40vh;
+  background-position:center;
+  background-size:cover;
 }
-.addnew {  flex: none; height:30vh; padding: 35px;}
 .animal-bottom {
   flex:1 1 100%;
   position:relative;
   overflow:hidden;
 }
+.animal-bottom-section {
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+}
+.animal-nav {
+  text-align:center;
+}
+
+.animal-nav li {
+  position:relative;
+  list-style-type: none;
+}
+.animal-nav .active::after {
+  content:'';
+  position:absolute;
+  bottom:0;
+  left:0;
+  width:100%;
+  height:3px;
+  background-color:var(--color-primary-darkpink);
+}
+.animal-bottom-section {
+  display:none;
+}
+.animal-bottom-section.active {
+  display:block;
+}
+
+
+
+.animallist {
+}
+.animallist-item {
+  font-weight:normal;
+  margin: 1em;
+  border-radius: 1em;
+  overflow: hidden;
+  box-shadow: 0 5px 10px rgb(0 0 0 / 20%);
+}
+.animallist-image img{
+  width:100px;
+  height:100px;
+  vertical-align: middle;
+}
+.animallist-description {
+  padding:1em;
+}
+.animallist-name {
+  font-size:1.3em;
+}
+
+.animal-image-thumb img {
+  width:6em;
+  height:6em;
+  vertical-align: middle;
+}
+
+
+
+//user profile page
+
+.user-profile-description{
+  text-align: center;
+}
+.user-profile-image img{
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  padding: 2em;
+}
+
+
+//animal list
+.animallist {
+}
+.animallist-item {
+  font-weight:normal;
+  margin: 1em;
+  border-radius: 1em;
+  overflow: hidden;
+  box-shadow: 0 5px 10px rgb(0 0 0 / 20%);
+}
+.animallist-image img{
+  width:100px;
+  height:100px;
+  vertical-align: middle;
+}
+.animallist-description {
+  padding:1em;
+}
+.animallist-name {
+  font-size:1.3em;
+}
+
+.animal-image-thumb img {
+  width:6em;
+  height:6em;
+  vertical-align: middle;
+}
+
+.animal-jump * {
+  pointer-events:none;
+}
+
+

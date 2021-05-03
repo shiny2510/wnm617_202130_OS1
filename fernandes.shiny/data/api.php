@@ -49,13 +49,39 @@ function makeStatement($data) {
       case "users_all":
          return makeQuery($c,"SELECT * FROM `track_202130_users`",$p);
       case "animals_all":
-         return makeQuery($c,"SELECT * FROM `track_202130_animals`",$p);
+         return makeQuery($c,"SELECT * FROM `track_202130_flowers`",$p);
       case "locations_all":
          return makeQuery($c,"SELECT * FROM `track_202130_locations`",$p);
 
 
+      case "user_by_id":
+         return makeQuery($c,"SELECT * FROM `track_202130_users` WHERE id=?",$p);
+      case "animal_by_id":
+         return makeQuery($c,"SELECT * FROM `track_202130_flowers` WHERE id=?",$p);
+      case "location_by_id":
+         return makeQuery($c,"SELECT * FROM `track_202130_locations` WHERE id=?",$p);
+
+
+      case "animals_by_user_id":
+         return makeQuery($c,"SELECT * FROM `track_202130_flowers` WHERE user_id=?",$p);
+      case "locations_by_animal_id":
+         return makeQuery($c,"SELECT * FROM `track_202130_locations` WHERE animal_id=?",$p);
+
+      case "recent_locations":
+         return makeQuery($c,"SELECT *
+            FROM `track_202130_flowers` a
+            RIGHT JOIN (
+               SELECT * FROM `track_202130_locations`
+               ORDER BY `date_create` DESC
+            ) l
+            ON a.id = l.animal_id
+            WHERE a.user_id=?
+            GROUP BY l.animal_id
+            ",$p);
+
+
       case "check_signin":
-         return ["success"=>"you are succeed"];
+         return makeQuery($c,"SELECT id FROM `track_202130_users` WHERE `username`=? AND `password`=md5(?)",$p);
 
 
       default:
