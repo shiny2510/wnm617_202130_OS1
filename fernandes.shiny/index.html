@@ -18,13 +18,14 @@
 
    <script src="js/functions.js"></script>
    <script src="js/maps.js"></script>
+   <script src="js/forms.js"></script>
    <script src="js/pages.js"></script>
    <script src="js/parts.js"></script>
    <script src="js/signin.js"></script>
    <script src="js/app.js"></script>
 
     <script
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCxFlGCvrBiz53-c8WDpV4bryeCiEkdNdc&libraries=&v=weekly"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA4SCoIjz1erSTt5MdwvwY6izHDRQUwH-E&libraries=&v=weekly"
       async
     ></script>
    
@@ -62,7 +63,7 @@
                            <img src="img/User-icon.png">
                         </div>
 
-                     <input class="input" type="text" id="signin-username" placeholder="Enter your Username" data-role="none">
+                     <input class="input" type="text" id="signin-username" placeholder="Enter your Username" data-role="none" required="">
                   </div>
                </div>
 
@@ -73,7 +74,7 @@
                            <img src="img/password-icon.png">
                         </div>
 
-                     <input class="input" type="text" id="signin-password" placeholder="Enter your Password" data-role="none">
+                     <input class="input" type="password" id="signin-password" placeholder="Enter your Password" data-role="none">
                   </div>
                </div>
 
@@ -104,7 +105,7 @@
          </div>
 
          <div>
-            <form class="form" id="signin-form" data-ajax="false" style="padding:1em">
+            <form class="form" id="signup-form" data-ajax="false" style="padding:1em">
                <div class="welcome">
                <h1>CREATE ACCOUNT</h1>
                <p>Please Fill In your details</p>
@@ -117,7 +118,7 @@
                            <img src="img/User-icon.png">
                         </div>
 
-                     <input class="input" type="text" id="signin-username" placeholder="Enter your Fullname" data-role="none">
+                     <input class="input" type="text" id="signup-name" placeholder="Enter your Fullname" data-role="none">
                   </div>
                </div>
 
@@ -128,34 +129,13 @@
                            <img src="img/mail-icon.png">
                         </div>
 
-                     <input class="input" type="text" id="signin-password" placeholder="Enter your email-id" data-role="none">
+                     <input class="input" type="text" id="signup-email" placeholder="Enter your email-id" data-role="none">
                   </div>
                </div>
 
-               <div class="form-control form-input">
-                  <div class="icon-input-container">
-
-                        <div class="icon">
-                           <img src="img/User-icon.png">
-                        </div>
-
-                     <input class="input" type="text" id="signin-password" placeholder="Chose your Username" data-role="none">
-                  </div>
-               </div>
-
-               <div class="form-control form-input">
-                  <div class="icon-input-container">
-
-                        <div class="icon">
-                           <img src="img/password-icon.png">
-                        </div>
-
-                     <input class="input" type="text" id="signin-password" placeholder="Set your Password" data-role="none">
-                  </div>
-               </div>
-
+               
                <div class="form-control">
-                  <input type="submit" class="form-button" value="SIGN UP" data-role="none">
+                  <input type="submit" class="form-button" value="CONTINUE" data-role="none">
                </div>
 
                <div class="welcome">
@@ -169,8 +149,78 @@
       </div>
    </section>
 
+
+//signup second page
+<section data-role="page" id="signup-second-page">
+      <div data-role="main" class="display-flex flex-vertical">
+
+         <div class="display-flex flex-vertical flex-align-center">
+            <div>
+               <img class="bg1" src="img/yellowbg.png">
+            </div>
+         </div>
+
+         <div>
+            <form class="form" id="signup-second-form" data-ajax="false" style="padding:1em">
+               <div class="welcome">
+               <h1>CREATE ACCOUNT</h1>
+               <p>Chose credentials</p>
+               </div>
+
+               
+
+
+               <div class="form-control form-input">
+                  <div class="icon-input-container">
+
+                        <div class="icon">
+                           <img src="img/User-icon.png">
+                        </div>
+
+                     <input class="input" type="text" id="signup-username" placeholder="Chose your Username" data-role="none">
+                  </div>
+               </div>
+
+               <div class="form-control form-input">
+                  <div class="icon-input-container">
+
+                        <div class="icon">
+                           <img src="img/password-icon.png">
+                        </div>
+
+                     <input class="input" type="password" id="signup-password" placeholder="Set your Password" data-role="none">
+                  </div>
+               </div>
+
+               <div class="form-control form-input">
+                  <div class="icon-input-container">
+
+                        <div class="icon">
+                           <img src="img/password-icon.png">
+                        </div>
+
+                  <input class="input" type="password" id="signup-confirm" placeholder="Confirm Password" data-role="none">
+               </div>
+               </div>
+
+               <div class="form-control">
+                  <input type="submit" class="form-button" value="SIGNUP" data-role="none">
+               </div>
+
+               <div class="welcome">
+               <p>Already have an Account?</p>
+               <a href="#signin-page"><h4>SIGN IN</h4></a>
+               </div>
+
+            </form>
+         </div>
+
+      </div>
+   </section>
+
+
 <!-- maps page -->
-   <section data-role="page" id="recent-page">
+   <!-- <section data-role="page" id="recent-page">
       <div data-role="main">
          <div class="map-icon-test icon" style="position:absolute;left:60vw;top:35vh;font-size:2em" data-activate="#recent-test-modal">
             <img src="img/pin-icon.png" alt="">
@@ -198,8 +248,21 @@
 
       <div class="floater floatericon" style="left:43%;top:80%;">
          <a href="#add-new-page"><img src="img/addnew-icon.png"></a>
-      </div>
+      </div> -->
 
+      <section data-role="page" id="recent-page">
+      <div data-role="main">
+         <div class="map"></div>
+         <div class="floater bottom right" style="padding:1em">
+            <a href="#choose-animal-page" class="circle-button js-add-from-recent">&plus;</a>
+         </div>
+
+         <div class="modal" id="recent-drawer">
+            <div class="modal-drawer modal-card top">
+               <div class="modal-body"></div>
+            </div>
+         </div>
+      </div>
       <footer data-role="footer" data-template="#footer-template"></footer>
    </section>
 

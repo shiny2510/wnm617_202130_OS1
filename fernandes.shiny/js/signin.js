@@ -1,17 +1,19 @@
-
 const checkSigninForm = async () => {
    let username = $("#signin-username").val();
    let password = $("#signin-password").val();
-
+   
    if(username=='' || password=='') {
       // warn that not all information is there
       return;
    }
+    console.log(username);
+   console.log(password);
 
    let user = await query({
       type:'check_signin',
       params:[username,password]
    });
+   console.log(user);
 
    if(user.result.length > 0) {
       console.log("logged in")

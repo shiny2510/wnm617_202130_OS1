@@ -36,12 +36,16 @@ $(()=>{
       checkSigninForm();
    })
    .on("submit","#signup-form",function(e){
+      console.log("entering submit");
+      console.log(e);
       e.preventDefault();
-      $.mobile.navigate("#signup-second-page");
+      checkSignupForm();
+      // $.mobile.navigate("#signup-second-page");
    })
    .on("submit","#signup-second-form",function(e){
       e.preventDefault();
-      $.mobile.navigate("#recent-page");
+      checkSignupSecondForm();
+      // $.mobile.navigate("#recent-page");
    })
 
 

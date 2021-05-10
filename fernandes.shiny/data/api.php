@@ -87,21 +87,21 @@ function makeStatement($data) {
 
       /* INSERT STATEMENTS */
       case "insert_user":
-         $r = makeQuery($c,"SELECT id FROM `track_202130_users` WHERE `email`=?",[$p[0]]);
+         $r = makeQuery($c,"SELECT id FROM `track_202130_users` WHERE `email`=?",[$p[1]]);
          if(count($r['result']))
             return ["error"=>"Email already exists"];
 
          $r = makeQuery($c,"INSERT INTO
             `track_202130_users`
-            (`email`,`password`,`date_create`)
+            (`name`,`email`,`date_create`)
             VALUES
-            (?, md5(?), NOW())
+            (?,?,NOW())
             ",$p,false);
          return ["id"=>$c->lastInsertId()];
 
       case "insert_animal":
          $r = makeQuery($c,"INSERT INTO
-            `track_202130_animals`
+            `track_202130_flowers`
             (`user_id`,`name`,`type`,`breed`,`description`,`img`,`date_create`)
             VALUES
             (?,?,?,?,?,'https://via.placeholder.com/500/?text=Animal',NOW())
@@ -128,7 +128,7 @@ function makeStatement($data) {
             `track_202130_users`
             SET
             `username` = ?,
-            `name` = ?,
+            `password` = md5(?),
             `img` = 'https://via.placeholder.com/500/?text=Profile'
             WHERE `id` = ?
             ",$p,false);

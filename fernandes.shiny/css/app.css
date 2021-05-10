@@ -498,11 +498,19 @@ a:hover {
 
 
 /* remove this later */
-#recent-page [data-role='main'] {
+/*#recent-page [data-role='main'] {
   background-image: url('../img/maps.png');
   background-position:center;
   background-size:cover;
+}*/
+.map {
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
 }
+
 
 /* ANIMAL PROFILE PAGE */
 .animal-top {
