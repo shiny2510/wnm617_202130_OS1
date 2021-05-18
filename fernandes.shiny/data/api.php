@@ -40,6 +40,20 @@ function makeQuery($c,$ps,$p,$makeResults=true) {
    }
 }
 
+function makeUpload($file,$folder) {
+   $filename = microtime(true) . "_" . $_FILES[$file]['name'];
+
+   if(@move_uploaded_file(
+      $_FILES[$file]['tmp_name'],
+      $folder.$filename
+   )) return ['result'=>$filename];
+   else return [
+      "error"=>"File Upload Failed",
+      "_FILES"=>$_FILES,
+      "filename"=>$filename,
+   ];
+}
+
 function makeStatement($data) {
    $c = makeConn();
    $t = $data->type;
@@ -82,6 +96,25 @@ function makeStatement($data) {
 
       case "check_signin":
          return makeQuery($c,"SELECT id FROM `track_202130_users` WHERE `username`=? AND `password`=md5(?)",$p);
+
+
+      case "search_animals":
+         $p = ["%$p[0]%",$p[1]];
+         return makeQuery($c,"SELECT *
+            FROM `track_202130_animals`
+            WHERE
+               `name` LIKE ? AND
+               `user_id` = ?
+            ",$p);
+      case "filter_animals":
+         return makeQuery($c,"SELECT *
+            FROM `track_202130_animals`
+            WHERE
+               `$p[0]` = ? AND
+               `user_id` = ?
+            ",[$p[1],$p[2]]);
+
+
 
 /* CRUD */
 
@@ -145,6 +178,15 @@ function makeStatement($data) {
             ",$p,false);
          return ["result"=>"success"];
 
+      case "update_user_image":
+         $r = makeQuery($c,"UPDATE
+            `track_202130_users`
+            SET
+            `img` = ?
+            WHERE `id` = ?
+            ",$p,false);
+         return ["result"=>"success"];
+
       case "update_user_password":
          $r = makeQuery($c,"UPDATE
             `track_202130_users`
@@ -166,6 +208,15 @@ function makeStatement($data) {
             ",$p,false);
          return ["result"=>"success"];
 
+      case "update_animal_image":
+         $r = makeQuery($c,"UPDATE
+            `track_202130_animals`
+            SET
+            `img` = ?
+            WHERE `id` = ?
+            ",$p,false);
+         return ["result"=>"success"];
+
       case "update_location":
          $r = makeQuery($c,"UPDATE
             `track_202130_locations`
@@ -175,11 +226,35 @@ function makeStatement($data) {
             ",$p,false);
          return ["result"=>"success"];
 
+      case "update_location":
+         $r = makeQuery($c,"UPDATE
+            `track_202130_locations`
+            SET
+            `photo` = ?
+            WHERE `id` = ?
+            ",$p,false);
+         return ["result"=>"success"];
+
+
+   // DELETE
+      case "delete_animal":
+         return makeQuery($c,"DELETE FROM `track_202130_animals` WHERE `id` = ?",$p,false);
+
+      case "delete_location":
+         return makeQuery($c,"DELETE FROM `track_202130_locations` WHERE `id` = ?",$p,false);
+
 
       default:
          return ["error"=>"No Matched Type"];
    }
 }
+
+
+if(!empty($_FILES)) {
+   $r = makeUpload("image","../uploads/");
+   die(json_encode($r));
+}
+
 
 $data = json_decode(file_get_contents("php://input"));
 

@@ -14,6 +14,9 @@ const makeAnimalList = templater(o=>`
 const makeUserProfile = o => `
 <div class="user-profile-image">
    <img src="${o.img}" alt="">
+   <div class="floater bottom right">
+      <a href="#user-upload-page" class="icon"><img src="img/edit-icon.png" alt=""></a>
+   </div>
 </div>
 <div class="user-profile-description">
    <div class="user-profile-name">${o.name}</div>
@@ -24,7 +27,7 @@ const makeUserProfile = o => `
 const makeAnimalInfo = o => `
 <div class="animal-name">${o.name}</div>
 <div class="animal-type">${o.type}</div>
-<div class="animal-breed">${o.breed}</div>
+<div class="animal-breed">${o.breed}</div>	
 `;
 
 
@@ -59,6 +62,22 @@ const FormControlTextarea = ({namespace,name,displayname,type,placeholder,value}
       <textarea class="form-input" id="${namespace}-${name}" data-role="none" placeholder="${placeholder}">${value}</textarea>
    </div>`;
 }
+
+
+const FormSelectOptions = (options,selected=1) => {
+   return options.reduce((r,o)=>{
+      return r+`<option value="${o.id}" ${o.id===selected?'selected':''}>${o.name}</option>`
+   },'');
+}
+
+const FormSelect = (options,id,selected=1) => {
+   return `<div class='form-select'>
+      <select id="${id}">
+         ${FormSelectOptions(options,selected)}
+      </select>
+   </div>`;
+}
+
 
 
 
@@ -152,3 +171,27 @@ ${FormControlInput({
    value:''
 })}
 `
+const makeAnimalListSet = (animals,missing_text="") => {
+   animal_template = animals.length?
+      makeAnimalList(animals):
+      `<div class="animallist-item"><div class="animallist-description">${missing_text}</div></div>`
+
+   $("#list-page .animallist").html(animal_template);
+}
+
+const capitalize = s => s[0].toUpperCase()+s.substr(1);
+
+const filterList = (animals,type) => {
+   let a = [...(new Set(animals.map(o=>o[type])))];
+   return templater(o=>o?`<li class="filter" data-field="${type}" data-value="${o}">${capitalize(o)}</li>`:'')(a);
+}
+
+const makeFilterList = (animals) => {
+   return `
+   <li class="filter" data-field="type" data-value="">All</li>
+   |
+   ${filterList(animals,'type')}
+   |
+   ${filterList(animals,'color')}
+   `
+}

@@ -1,5 +1,5 @@
 
-
+let core_pages = ["recent-page","list-page","user-profile-page"];
 
 // Document Ready
 $(()=>{
@@ -14,6 +14,11 @@ $(()=>{
 
       $(".active").removeClass("active")
 
+      if(core_pages.includes(ui.toPage[0].id)) {
+         $(`[data-page-link='${ui.toPage[0].id}']`)
+            .addClass("active");
+      }
+
       // PAGE ROUTING
       switch(ui.toPage[0].id) {
          case "recent-page": RecentPage(); break;
@@ -21,6 +26,7 @@ $(()=>{
          case "user-profile-page": UserProfilePage(); break;
          case "user-edit-page": UserEditPage(); break;
          case "user-password-page": UserPasswordPage(); break;
+         case "user-upload-page": UserUploadPage(); break;
          case "animal-profile-page": AnimalProfilePage(); break;
          case "animal-edit-page": AnimalEditPage(); break;
          case "animal-add-page": AnimalAddPage(); break;
@@ -47,6 +53,28 @@ $(()=>{
       checkSignupSecondForm();
       // $.mobile.navigate("#recent-page");
    })
+
+   .on("submit","#list-search",function(e){
+      e.preventDefault();
+      checkSearchForm();
+   })
+   .on("submit","#recent-search",function(e){
+      e.preventDefault();
+      checkRecentSearchForm();
+   })
+
+   .on("change",".image-uploader input",function(e){
+      checkUpload(this.files[0])
+      .then(d=>{
+         console.log(d)
+         $(".upload-image-input").val('uploads/'+d.result);
+         $(".image-uploader").css({
+            "background-image":`url(uploads/${d.result})`
+         });
+      })
+   })
+
+
 
 
    /* ANCHOR CLICKS */
@@ -86,13 +114,25 @@ $(()=>{
    .on("click",".user-edit-submit",function(e){
       checkUserEditForm();
    })
+      .on("click",".user-upload-submit",function(e){
+      checkUserUploadForm();
+   })
    .on("click",".user-password-submit",function(e){
       checkUserPasswordForm();
    })
    .on("click",".location-add-submit",function(e){
       checkLocationAddForm();
    })
+   .on("click",".animal-delete",function(e){
+      checkAnimalDelete($(this).data('id'));
+   })
+   .on("click",".filter",function(e){
+      checkListFilter($(this).data());
+   })
 
+   .on("click",".js-update-animal-image",function(e){
+      console.log("honk")
+   })
 
 
    /* DATA ACTIVATE */

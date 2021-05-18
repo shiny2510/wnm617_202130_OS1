@@ -182,6 +182,10 @@ a:hover {
   padding: 0 1em;
 }
 
+[data-page-link].active {
+  background-color:var(--color-accent2-pistagreen);
+}
+
 
 /lists/
 
@@ -484,8 +488,8 @@ a:hover {
 .floater.bottom { bottom: 0; }
 
 .floater .icon {
-  /* padding:1em;
-  display:block; */
+   padding:1em;
+  display:block; 
 }
 
 .floater img{
@@ -591,11 +595,39 @@ a:hover {
 .user-profile-description{
   text-align: center;
 }
-.user-profile-image img{
-  width: 100%;
-  height: 100%;
-  border-radius: 100%;
-  padding: 2em;
+.user-profile-image {
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    height: 0;
+    padding-bottom: 100%;
+    background-color: var(--color-main-light);
+}
+.user-profile-image>img {
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    object-fit: cover;
+    padding: 2em;
+}
+
+
+
+.image-uploader.full {
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background-position:center;
+  background-size:contain;
+  background-repeat:no-repeat;
+}
+.image-uploader.full input{
+  display:none;
 }
 
 
@@ -613,6 +645,7 @@ a:hover {
   width:100px;
   height:100px;
   vertical-align: middle;
+  object-fit: cover;
 }
 .animallist-description {
   padding:1em;
