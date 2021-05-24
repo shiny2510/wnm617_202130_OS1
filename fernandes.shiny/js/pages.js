@@ -55,7 +55,7 @@ const ListPage = async () => {
 
    makeAnimalListSet(
       animals.result,
-      "No animals yet. Try adding some."
+      "No flowers yet. Try adding some."
    );
 }
 //    animal_template = animals.result.length?
