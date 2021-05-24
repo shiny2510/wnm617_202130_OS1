@@ -1,12 +1,12 @@
 
 const makeAnimalList = templater(o=>`
-<div class="animallist-item display-flex animal-jump" data-id="${o.id}">
+<div style="background-color: #F3FFC6;" class="animallist-item display-flex animal-jump" data-id="${o.id}">
    <div class="flex-none animallist-image"><img src="${o.img}" alt=""></div>
    <div class="animallist-description flex-stretch">
-      <div class="animallist-name">${o.name}</div>
-      <div class="animallist-info">${o.type}, ${o.color}</div>
+      <div  class="animallist-name" style="color: #B6174B;">${o.name}</div>
+      <div class="animallist-info"><span class="animal-info-header">TYPE:</span>${o.type}</div>
+      <div class="animallist-info"><span class="animal-info-header">COLOR:</span>${o.color}</div>
    </div>
-   
 </div>
 `);
 
@@ -26,6 +26,7 @@ const makeUserProfile = o => `
 `;
 
 const makeAnimalInfo = o => `
+<div class="icon floater right animal-delete" data-id="${o.id}"><img style="margin:10px" src="img/trash-icon.png"></div>
 <div class="animal-name">${o.name}</div>
 <div class="animal-type"><span class="animal-info-header">TYPE: </span>${o.type}</div>
 <div class="animal-color"><span class="animal-info-header">COLOR: </span>${o.color}</div>
@@ -61,7 +62,7 @@ const FormControlInput = ({namespace,name,displayname,type,placeholder,value}) =
 const FormControlTextarea = ({namespace,name,displayname,type,placeholder,value}) => {
    return `<div class="form-control">
       <label for="${namespace}-${name}" class="form-label">${displayname}</label>
-      <textarea class="form-input" id="${namespace}-${name}" data-role="none" placeholder="${placeholder}">${value}</textarea>
+      <textarea rows="10" cols="30" style="border: none; border-bottom: 1px solid var(--color-primary-darkpink); resize: none;" class="form-input" id="${namespace}-${name}" data-role="none" placeholder="${placeholder}">${value}</textarea>
    </div>`;
 }
 
@@ -100,6 +101,7 @@ ${FormControlInput({
    placeholder:'Type The Flower Type',
    value:o.type
 })}
+
 ${FormControlInput({
    namespace:"animal-edit",
    name:'color',
@@ -187,12 +189,12 @@ const capitalize = s => s[0].toUpperCase()+s.substr(1);
 
 const filterList = (animals,type) => {
    let a = [...(new Set(animals.map(o=>o[type])))];
-   return templater(o=>o?`<li class="filter" data-field="${type}" data-value="${o}">${capitalize(o)}</li>`:'')(a);
+   return templater(o=>o?`<li class="filter" style="padding-left: 5px; padding-right: 5px;" data-field="${type}" data-value="${o}">${capitalize(o)}</li>`:'')(a);
 }
 
 const makeFilterList = (animals) => {
    return `
-   <li class="filter" data-field="type" data-value="">All</li>
+   <li class="filter" style="padding-right: 5px;" data-field="type" data-value="">All</li>
    |
    ${filterList(animals,'type')}
    |

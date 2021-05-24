@@ -283,6 +283,17 @@
             </div>
          </div>
       </header>
+      <div>
+            <div class="flex-stretch" style="padding:1em">
+               <form data-ajax="false" id="list-search" class="hotdog">
+                  <input style="color: black; outline: none; width:100%" type="search" id="list-search-value" data-role="none" placeholder="Search">
+               </form>
+            </div>
+      </div>
+      <div>
+         <ul class="filter-set" style="overflow: auto; padding: 0; padding-left: 10px; list-style: none; display: flex;"></ul>
+      </div>
+      
       <div data-role="main" >
 
          <div class="overscroll">
@@ -595,6 +606,21 @@
    </div>
    </section>
 
+<section data-role="page" id="animal-edit-page">
+      <header data-role="header">
+         <h1>Edit Flower</h1>
+         <ul>
+            <li><a href="#" data-rel="back">Cancel</a></li>
+            <li class="flex-stretch"></li>
+            <li><a href="#" class="animal-edit-submit">Save</a></li>
+         </ul>
+      </header>
+      <div data-role="main" class="display-flex flex-vertical">
+         <div class="overscroll">
+            <form id="animal-edit-form" class="user-edit-form-input" data-ajax="false" style="padding:1em"></form>
+         </div>
+      </div>
+   </section>
 
 
 <!-- //add-new-page -->
@@ -696,7 +722,7 @@
                <div class="form-control form-input">
                   <label for="model" class="form-label">Description</label>
                   <div class="icon-input-container">
-                     <input class="input" type="text" id="animal-add-description" placeholder="Say something about it" data-role="none">
+                     <textarea rows="10" cols="30" style="resize: none" class="input" type="text" id="animal-add-description" placeholder="Say something about it" data-role="none"></textarea>
                   </div>
                </div>
 
@@ -712,7 +738,7 @@
 </section>
  <section data-role="page" id="choose-location-page">
       <header data-role="header">
-         <h1>Choose Location</h1>
+         <h1 style="font-size: 1.5rem;">Choose Location</h1>
          <ul>
             <li><a href="#" data-rel="back">Back</a></li>
             <li class="flex-stretch"></li>
@@ -724,13 +750,13 @@
          <input type="hidden" id="location-lng">
          <div class="map"></div>
       </div>
-      <div data-role="main" class="display-flex flex-vertical">
+     <!--  <div data-role="main" class="display-flex flex-vertical">
          <div class="overscroll">
             <form style="padding:1em">
                <input type="hidden" id="location-redirect">
             </form>
          </div>
-      </div>
+      </div> -->
    </section>
 
 

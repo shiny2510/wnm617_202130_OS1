@@ -423,7 +423,7 @@ a:hover {
 
 .modal-drawer.top,
 .modal-drawer.bottom {
-  height:30vh;
+  height:15vh;
   width:100%;
 }
 .modal-drawer.top { top:0; transform:translateY(-100%); }
@@ -442,7 +442,7 @@ a:hover {
   padding:0.5em 1em;
 }
 .modal-body {
-  background-color:var(--color-white);
+  background-color: white;
   flex: 1 1 100%;
   padding:0.5em 1em;
   position:relative;
@@ -577,7 +577,7 @@ a:hover {
 }
 
 .animal-name {
-width: 168px;
+
 height: 27px;
 left: 48px;
 top: 422px;
@@ -599,6 +599,10 @@ color: #B6174B;
   padding-bottom: 10px;
   text-transform: capitalize;
 
+}
+
+.animal-description {
+  line-height: 1.5rem;
 }
 
 .animal-info-header {
@@ -640,6 +644,14 @@ color: #C4C4C4;
 }
 .animallist-name {
   font-size:1.3em;
+font-family: Philosopher;
+font-style: normal;
+font-weight: bold;
+font-size: 18px;
+line-height: 20px;
+text-transform: uppercase;
+
+color: #B6174B;
 }
 
 .animal-image-thumb img {
@@ -728,7 +740,7 @@ color: #C4C4C4;
   margin: 1em;
   border-radius: 1em;
   overflow: hidden;
-  box-shadow: 0 5px 10px rgb(0 0 0 / 20%);
+  box-shadow: 0 5px 10px rgb(0 0 0 / 7%);
 }
 .animallist-image img{
   width:100px;
@@ -738,6 +750,7 @@ color: #C4C4C4;
 }
 .animallist-description {
   padding:1em;
+  line-height: 1.5rem;
 }
 .animallist-name {
   font-size:1.3em;

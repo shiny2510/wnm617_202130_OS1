@@ -101,14 +101,14 @@ function makeStatement($data) {
       case "search_animals":
          $p = ["%$p[0]%",$p[1]];
          return makeQuery($c,"SELECT *
-            FROM `track_202130_animals`
+            FROM `track_202130_flowers`
             WHERE
                `name` LIKE ? AND
                `user_id` = ?
             ",$p);
       case "filter_animals":
          return makeQuery($c,"SELECT *
-            FROM `track_202130_animals`
+            FROM `track_202130_flowers`
             WHERE
                `$p[0]` = ? AND
                `user_id` = ?
@@ -137,7 +137,7 @@ function makeStatement($data) {
             `track_202130_flowers`
             (`user_id`,`name`,`type`,`color`,`description`,`img`,`date_create`)
             VALUES
-            (?,?,?,?,?,'https://via.placeholder.com/500/?text=Animal',NOW())
+            (?,?,?,?,?,'https://via.placeholder.com/500/?text=Flower',NOW())
             ",$p,false);
          return ["id"=>$c->lastInsertId()];
 
@@ -198,7 +198,7 @@ function makeStatement($data) {
 
       case "update_animal":
          $r = makeQuery($c,"UPDATE
-            `track_202130_animals`
+            `track_202130_flowers`
             SET
             `name` = ?,
             `type` = ?,
@@ -238,7 +238,7 @@ function makeStatement($data) {
 
    // DELETE
       case "delete_animal":
-         return makeQuery($c,"DELETE FROM `track_202130_animals` WHERE `id` = ?",$p,false);
+         return makeQuery($c,"DELETE FROM `track_202130_flowers` WHERE `id` = ?",$p,false);
 
       case "delete_location":
          return makeQuery($c,"DELETE FROM `track_202130_locations` WHERE `id` = ?",$p,false);

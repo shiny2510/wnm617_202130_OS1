@@ -106,7 +106,7 @@ const checkAnimalAddForm = () => {
 const checkAnimalEditForm = () => {
    let name = $("#animal-edit-name").val();
    let type = $("#animal-edit-type").val();
-   let color = $("#animal-edit-breed").val();
+   let color = $("#animal-edit-color").val();
    let description = $("#animal-edit-description").val();
 
    query({
