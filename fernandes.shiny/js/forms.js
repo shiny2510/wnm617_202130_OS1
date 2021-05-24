@@ -59,9 +59,10 @@ const checkUserEditForm = () => {
    })
 }
 const checkUserPasswordForm = () => {
-   let oldpassword = $("#user-edit-old-password").val();
-   let password = $("#user-edit-new-password").val();
-   let confirm = $("#user-edit-confirm-password").val();
+   let oldpassword = $("#user-password-old-password").val();
+   let password = $("#user-password-new-password").val();
+   let confirm = $("#user-password-confirm-password").val();
+   console.log(oldpassword,password,confirm,"pass");
 
    if(password!==confirm)
       throw "New Passwords don't match";
@@ -85,31 +86,32 @@ const checkUserPasswordForm = () => {
 const checkAnimalAddForm = () => {
    let name = $("#animal-add-name").val();
    let type = $("#animal-add-type").val();
-   let breed = $("#animal-add-breed").val();
+   let color = $("#animal-add-breed").val();
    let description = $("#animal-add-description").val();
+   console.log(name,type,color,description);
 
    query({
       type:"insert_animal",
-      params:[sessionStorage.userId,name,type,breed,description]
+      params:[sessionStorage.userId,name,type,color,description]
    }).then(d=>{
       if(d.error) {
          throw d.error;
       }
       console.log(d)
       $("#animal-add-form")[0].reset();
-      sessionStorage.animalId = d.id;
-      window.history.go(-1);
+      sessionStorage.animalId = d.id;  
+      window.history.go(+$("#animal-profile-page"));
    })
 }
 const checkAnimalEditForm = () => {
    let name = $("#animal-edit-name").val();
    let type = $("#animal-edit-type").val();
-   let breed = $("#animal-edit-breed").val();
+   let color = $("#animal-edit-breed").val();
    let description = $("#animal-edit-description").val();
 
    query({
       type:"update_animal",
-      params:[name,type,breed,description,sessionStorage.animalId]
+      params:[name,type,color,description,sessionStorage.animalId]
    }).then(d=>{
       if(d.error) {
          throw d.error;
@@ -119,10 +121,11 @@ const checkAnimalEditForm = () => {
 }
 
 const checkLocationAddForm = () => {
-   let animal_id = $("#location-choose-animal").val();
+   let animal_id = sessionStorage.animalId;
    let lat = +$("#location-lat").val();
    let lng = +$("#location-lng").val();
-   let description = $("#location-description").val();
+   let description = '';
+   console.log(animal_id,lat,lng,description, "animal");
 
    query({
       type:"insert_location",
@@ -131,7 +134,7 @@ const checkLocationAddForm = () => {
       if(d.error) {
          throw d.error;
       }
-      window.history.go(+$("#location-redirect").val());
+      window.history.go(+$("#animal-profile-page"));
    })
 }
 

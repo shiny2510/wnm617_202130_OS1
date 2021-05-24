@@ -135,7 +135,7 @@ function makeStatement($data) {
       case "insert_animal":
          $r = makeQuery($c,"INSERT INTO
             `track_202130_flowers`
-            (`user_id`,`name`,`type`,`breed`,`description`,`img`,`date_create`)
+            (`user_id`,`name`,`type`,`color`,`description`,`img`,`date_create`)
             VALUES
             (?,?,?,?,?,'https://via.placeholder.com/500/?text=Animal',NOW())
             ",$p,false);
@@ -202,7 +202,7 @@ function makeStatement($data) {
             SET
             `name` = ?,
             `type` = ?,
-            `breed` = ?,
+            `color` = ?,
             `description` = ?
             WHERE `id` = ?
             ",$p,false);
@@ -210,7 +210,7 @@ function makeStatement($data) {
 
       case "update_animal_image":
          $r = makeQuery($c,"UPDATE
-            `track_202130_animals`
+            `track_202130_flowers`
             SET
             `img` = ?
             WHERE `id` = ?

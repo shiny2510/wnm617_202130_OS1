@@ -4,7 +4,7 @@ const makeAnimalList = templater(o=>`
    <div class="flex-none animallist-image"><img src="${o.img}" alt=""></div>
    <div class="animallist-description flex-stretch">
       <div class="animallist-name">${o.name}</div>
-      <div class="animallist-info">${o.type}, ${o.breed}</div>
+      <div class="animallist-info">${o.type}, ${o.color}</div>
    </div>
    
 </div>
@@ -14,20 +14,22 @@ const makeAnimalList = templater(o=>`
 const makeUserProfile = o => `
 <div class="user-profile-image">
    <img src="${o.img}" alt="">
-   <div class="floater bottom right">
-      <a href="#user-upload-page" class="icon"><img src="img/edit-icon.png" alt=""></a>
+   <div>
+      <a href="#user-upload-page" class="icon"><img style="position: absolute; right: 0; top: 90%; margin-right: 10px;" src="img/camera-icon.png" alt=""></a>
    </div>
 </div>
 <div class="user-profile-description">
    <div class="user-profile-name">${o.name}</div>
-   <div class="user-profile-email">${o.email}</div>
+   <div class="user-profile-username"><span class="user-info">USERNAME: </span>${o.username}</div>
+   <div class="user-profile-email"><span class="user-info">EMAIL: </span>${o.email}</div>
 </div>
 `;
 
 const makeAnimalInfo = o => `
 <div class="animal-name">${o.name}</div>
-<div class="animal-type">${o.type}</div>
-<div class="animal-breed">${o.breed}</div>	
+<div class="animal-type"><span class="animal-info-header">TYPE: </span>${o.type}</div>
+<div class="animal-color"><span class="animal-info-header">COLOR: </span>${o.color}</div>
+<div class="animal-description"><span class="animal-info-header">DESCRIPTION: </span>${o.description}</div>
 `;
 
 
@@ -41,7 +43,7 @@ const makeAnimalPopup = o => `
    <div class="flex-none" style="padding:1em">
       <div class="animal-name">${o.name}</div>
       <div class="animal-type">${o.type}</div>
-      <div class="animal-breed">${o.breed}</div>
+      <div class="animal-breed">${o.color}</div>
    </div>
 </div>
 `;
@@ -87,7 +89,7 @@ ${FormControlInput({
    name:'name',
    displayname:'Name',
    type:'text',
-   placeholder:'Type The Animal Name',
+   placeholder:'Type The Flower Name',
    value:o.name
 })}
 ${FormControlInput({
@@ -95,23 +97,23 @@ ${FormControlInput({
    name:'type',
    displayname:'Type',
    type:'text',
-   placeholder:'Type The Animal Type',
+   placeholder:'Type The Flower Type',
    value:o.type
 })}
 ${FormControlInput({
    namespace:"animal-edit",
-   name:'breed',
-   displayname:'Breed',
+   name:'color',
+   displayname:'Color',
    type:'text',
-   placeholder:'Type The Animal Breed',
-   value:o.breed
+   placeholder:'Type The Color of the flower',
+   value:o.color
 })}
 ${FormControlTextarea({
    namespace:"animal-edit",
    name:'description',
    displayname:'Description',
    type:'text',
-   placeholder:'Type The Animal Description',
+   placeholder:'Type The Flower Description',
    value:o.description
 })}
 `
@@ -152,7 +154,7 @@ ${FormControlInput({
    displayname:'Old Password',
    type:'password',
    placeholder:'Type Your Old Password',
-   value:''
+   value:'',
 })}
 ${FormControlInput({
    namespace:"user-password",
@@ -160,15 +162,17 @@ ${FormControlInput({
    displayname:'New Password',
    type:'password',
    placeholder:'Type Your New Password',
-   value:''
+   value:'',
+
 })}
 ${FormControlInput({
    namespace:"user-password",
    name:'confirm-password',
    displayname:'Confirm Password',
    type:'password',
-   placeholder:'Type Your New Password Again',
-   value:''
+   placeholder:'Confirm Your New Password',
+   value:'',
+
 })}
 `
 const makeAnimalListSet = (animals,missing_text="") => {

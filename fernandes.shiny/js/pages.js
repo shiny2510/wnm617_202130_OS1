@@ -163,7 +163,7 @@ const AnimalAddPage = async () => {
          makeAnimalProfileUpdateForm({
             name:"",
             type:"",
-            breed:"",
+            color:"",
             description:""
          },"animal-add")
       );

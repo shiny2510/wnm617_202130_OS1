@@ -74,6 +74,25 @@ $(()=>{
       })
    })
 
+   .on("change","#animal-update-image-input",function(e){
+      checkUpload(this.files[0])
+      .then(d=>{
+         console.log(d)
+         if(d.error) throw "Uploading failed: "+d.error;
+
+         let image_location = 'uploads/'+d.result;
+         query({
+            type:'update_animal_image',
+            params:[image_location,sessionStorage.animalId]
+         }).then(d=>{
+            if(d.error) {
+               throw d.error;
+            }
+            $("#animal-profile-page .animal-top")
+               .css({"background-image":`url(${image_location})`})
+         })
+      })
+   })
 
 
 
@@ -100,12 +119,13 @@ $(()=>{
    .on("click",".js-choose-animal",function(e){
       $("#location-choose-animal")
          .html(FormSelectOptions([{id:sessionStorage.animalId,name:"chosen"}]))
-      $("#location-redirect").val(-2);
+      // $("#location-redirect").val(-2);
    })
    .on("click",".js-add-from-recent",function(e){
       $("#location-redirect").val(-3);
    })
    .on("click",".animal-add-submit",function(e){
+      console.log("entering");
       checkAnimalAddForm();
    })
    .on("click",".animal-edit-submit",function(e){
